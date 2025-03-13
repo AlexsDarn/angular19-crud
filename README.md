@@ -13,7 +13,7 @@ Este es un proyecto en **Angular 19** standalone, sin módulos, que gestiona usu
 1. Clonar el repositorio:
 
    ```sh
-   git clone https://github.com/usuario/proyecto-angular.git
+   git clone https://github.com/AlexsDarn/angular19-crud
    cd proyecto-angular
    ```
 
