@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <div class="card shadow-lg rounded">
+    <div class="card-header d-flex justify-content-between align-items-center bg-dark text-white">
+      <h4 class="mb-0"><i class="fas fa-user-edit"></i> Update User</h4>
+      <a routerLink="/users" class="btn btn-success btn-sm">
+        <i class="fas fa-arrow-circle-left"></i> Volver
+      </a>
+    </div>
+
+    <div class="card-body">
+      <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name<span class="requiredStar">*</span></label>
+          <input id="name" type="text" class="form-control" formControlName="name" />
+          <div *ngIf="userForm.get('name')?.invalid && isSubmitted" class="text-danger small mt-1">
+            <i class="fas fa-exclamation-circle"></i>
+            <span *ngIf="userForm.get('name')?.errors?.['required']">Name is required</span>
+            <span *ngIf="userForm.get('name')?.errors?.['minlength']">Must have at least two characters</span>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email<span class="requiredStar">*</span></label>
+          <input id="email" type="email" class="form-control" formControlName="email" />
+          <div *ngIf="userForm.get('email')?.invalid && isSubmitted" class="text-danger small mt-1">
+            <i class="fas fa-exclamation-circle"></i>
+            <span *ngIf="userForm.get('email')?.errors?.['required']">Email is required</span>
+            <span *ngIf="userForm.get('email')?.errors?.['pattern']">Invalid email</span>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">
+            <i class="fas fa-check-circle"></i> Update
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
