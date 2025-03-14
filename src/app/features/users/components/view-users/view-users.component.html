@@ -7,20 +7,34 @@
       </a>
     </div>
 
-    <div class="card-body">
+    <div class="card-body" *ngIf="userDetail; else noUser">
       <table class="table table-bordered table-hover align-middle">
         <th></th>
         <tbody>
           <tr>
-            <td class="fw-bold"><i class="fas fa-user"></i> Name </td>
-            <td>{{ userDetail?.name }}</td>
+            <td class="fw-bold"><i class="fas fa-user"></i> Full Name </td>
+            <td>{{ userDetail?.firstName }} {{ userDetail?.lastName }}</td>
+          </tr>
+          <tr>
+            <td class="fw-bold"><i class="fas fa-id-card"></i> RUT </td>
+            <td>{{ userDetail?.rut }}-{{ userDetail?.dv }}</td>
+          </tr>
+          <tr>
+            <td class="fw-bold"><i class="fas fa-calendar"></i> Birth Date </td>
+            <td>{{ userDetail?.birthDate }}</td>
           </tr>
           <tr>
             <td class="fw-bold"><i class="fas fa-envelope"></i> Email </td>
-            <td>{{ userDetail?.email }}</td>
+            <td>{{ userDetail?.emailAddress }}</td>
           </tr>
         </tbody>
       </table>
     </div>
+
+    <ng-template #noUser>
+      <div class="alert alert-warning text-center">
+        <i class="fas fa-exclamation-triangle"></i> No user data available.
+      </div>
+    </ng-template>
   </div>
 </div>

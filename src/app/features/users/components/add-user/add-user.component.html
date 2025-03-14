@@ -9,26 +9,59 @@
 
     <div class="card-body">
       <form [formGroup]="userForm" (ngSubmit)="AddUser()">
+        <!-- First Name -->
         <div class="mb-3 row">
-          <label for="name" class="col-sm-3 col-form-label">Name<span class="requiredStar">*</span></label>
+          <label for="firstName" class="col-sm-3 col-form-label">First Name<span class="requiredStar">*</span></label>
           <div class="col-sm-9">
-            <input type="text" id="name" class="form-control" formControlName="name" required>
-            <div *ngIf="userForm.controls['name'].invalid && isSubmitted" class="text-danger small mt-1">
-              <i class="fas fa-exclamation-circle"></i> Name is required
-            </div>
-            
+            <input type="text" id="firstName" class="form-control" formControlName="firstName" required>
           </div>
         </div>
 
+        <!-- Last Name -->
         <div class="mb-3 row">
-          <label for="email" class="col-sm-3 col-form-label">Email<span class="requiredStar">*</span></label>
+          <label for="lastName" class="col-sm-3 col-form-label">Last Name<span class="requiredStar">*</span></label>
           <div class="col-sm-9">
-            <input type="email" id="email" class="form-control" formControlName="email" required>
-            <div *ngIf="userForm.controls['email'].invalid && isSubmitted" class="text-danger small mt-1">
-              <i class="fas fa-exclamation-circle"></i>
-              <span *ngIf="userForm.controls['email'].errors?.['required']">Email is required</span>
-              <span *ngIf="userForm.controls['email'].errors?.['pattern']">Invalid email format</span>
-            </div>            
+            <input type="text" id="lastName" class="form-control" formControlName="lastName" required>
+          </div>
+        </div>
+
+        <!-- RUT -->
+        <div class="mb-3 row">
+          <label for="rut" class="col-sm-3 col-form-label">RUT<span class="requiredStar">*</span></label>
+          <div class="col-sm-9">
+            <input type="number" id="rut" class="form-control" formControlName="rut" required>
+          </div>
+        </div>
+
+        <!-- DV -->
+        <div class="mb-3 row">
+          <label for="dv" class="col-sm-3 col-form-label">DV<span class="requiredStar">*</span></label>
+          <div class="col-sm-9">
+            <input type="text" id="dv" class="form-control" formControlName="dv" required>
+          </div>
+        </div>
+
+        <!-- Birth Date -->
+        <div class="mb-3 row">
+          <label for="birthDate" class="col-sm-3 col-form-label">Birth Date<span class="requiredStar">*</span></label>
+          <div class="col-sm-9">
+            <input type="date" id="birthDate" class="form-control" formControlName="birthDate" required>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3 row">
+          <label for="emailAddress" class="col-sm-3 col-form-label">Email<span class="requiredStar">*</span></label>
+          <div class="col-sm-9">
+            <input type="email" id="emailAddress" class="form-control" formControlName="emailAddress" required>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3 row">
+          <label for="password" class="col-sm-3 col-form-label">Password<span class="requiredStar">*</span></label>
+          <div class="col-sm-9">
+            <input type="password" id="password" class="form-control" formControlName="password" required>
           </div>
         </div>
 

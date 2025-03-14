@@ -20,8 +20,8 @@
         <tbody>
           <tr *ngFor="let user of userList$ | async" class="table-light">
             <td><b>{{ user.id }}</b></td>
-            <td>{{ user.name }}</td>
-            <td>{{ user.email }}</td>
+            <td>{{ user?.firstName }} {{ user?.lastName }}</td>
+            <td>{{ user.emailAddress }}</td>
             <td>
               <a [routerLink]="['/users/view-user/', user.id]" class="btn btn-outline-primary btn-sm mx-1">
                 <i class="fas fa-eye"></i> View

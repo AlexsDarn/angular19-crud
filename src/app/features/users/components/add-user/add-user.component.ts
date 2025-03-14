@@ -18,9 +18,15 @@ export class AddUserComponent {
   private readonly toastr = inject(ToastrService);
 
   userForm: FormGroup = this.fb.group({
-    name: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]]
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    rut: ['', Validators.required],
+    dv: ['', Validators.required],
+    birthDate: ['', Validators.required],
+    emailAddress: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
   });
+  
 
   isSubmitted = signal(false);
 

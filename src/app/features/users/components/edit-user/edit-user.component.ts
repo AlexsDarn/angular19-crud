@@ -30,8 +30,13 @@ export class EditUserComponent implements OnInit {
 
   private initForm() {
     this.userForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2)]],
-      email: [{ value: '', disabled: true }, [Validators.required, Validators.email]],
+      firstName: ['', [Validators.required, Validators.minLength(2)]],
+      lastName: ['', [Validators.required, Validators.minLength(2)]],
+      rut: ['', Validators.required],
+      dv: ['', Validators.required],
+      birthDate: ['', Validators.required],
+      emailAddress: [{ value: '', disabled: true }, [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
